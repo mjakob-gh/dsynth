@@ -38,6 +38,7 @@
 #include <netdb.h>
 
 #include "dsynth.h"
+#include "compat.h"
 
 static worker_t WorkerAry[MAXWORKERS];
 static int BuildInitialized;
