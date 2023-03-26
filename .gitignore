@@ -52,3 +52,9 @@ Mkfile.old
 dkms.conf
 
 .depend
+
+# binaries
+dsynth
+dsynth.1.gz
+dsynth.debug
+dsynth.full
