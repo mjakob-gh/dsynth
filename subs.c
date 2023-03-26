@@ -35,6 +35,7 @@
  * SUCH DAMAGE.
  */
 
+#define  _WANT_UCRED
 #include "dsynth.h"
 
 struct logerrinfo {
