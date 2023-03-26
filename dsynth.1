@@ -105,8 +105,8 @@ and /usr/ports onto /build/synth/ports with
 entries as follows:
 .Bd -literal
 # Device              Mountpoint		FStype  Options DumpPass#
-/usr/ports/distfiles  /build/synth/distfiles	null    rw      4 4
-/usr/ports            /build/synth/ports	null    rw      4 4
+/usr/ports/distfiles  /build/synth/distfiles	nullfs  rw      0 0
+/usr/ports            /build/synth/ports	nullfs  rw      0 0
 .Ed
 .Pp
 Please set the number of builders and the maximum number of jobs per
