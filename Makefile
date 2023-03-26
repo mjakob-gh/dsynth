@@ -21,13 +21,10 @@ CFLAGS+=	-DSCRIPTDIR=${SHAREDIR}/dsynth
 LDADD+=		-lpthread -lutil
 DPADD+=		${LIBPTHREAD} ${LIBUTIL}
 
-# ncurses, md5, for DragonFlyBSD
+# ncurses, md5, for FreeBSD
 #
-CFLAGS+=        -I${_SHLIBDIRPREFIX}/usr/include/priv/ncurses
-CFLAGS+=	${PRIVATELIB_CFLAGS}
-LDFLAGS+=       ${PRIVATELIB_LDFLAGS}
-LDADD+=		-lprivate_ncurses
-LDADD+=		-lprivate_crypto
+LDADD+=		-lncursesw
+LDADD+=		-lcrypto
 DPADD+=		${LIBNCURSES}
 DPADD+=		${LIBCRYPTO}
 
