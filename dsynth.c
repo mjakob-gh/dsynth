@@ -591,7 +591,7 @@ DoInit(void)
 	    "Directory_logs= /build/synth/logs\n"
 	    "Directory_ccache= disabled\n"
 	    "Directory_system= /\n"
-	    "Package_suffix= .txz\n"
+	    "Package_suffix= .pkg\n"
 	    "Number_of_builders= 0\n"
 	    "Max_jobs_per_builder= 0\n"
 	    "Tmpfs_workdir= true\n"

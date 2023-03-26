@@ -94,23 +94,23 @@ struct pkglink;
 #define DISABLED_STR	"disabled"
 
 /*
- * This can be ".tar", ".tgz", ".txz", ".tbz", "tzst".
+ * This can be ".tar", ".tgz", ".pkg", ".tbz", "tzst".
  *
  * .tar	- very fast but you'll need 1TB+ of storage just for the package files.
- * .txz - very compact but decompression speed is horrible.
+ * .pkg - very compact but decompression speed is horrible.
  * .tgz - reasonable compression, extremely fast decompression.  Roughly
- *	  1.1x to 2.0x the size of a .txz, but decompresses 10x faster.
+ *	  1.1x to 2.0x the size of a .pkg, but decompresses 10x faster.
  * .tbz - worse than .tgz generally
- * .tzst - slightly worse compression ratio to .txz, decompresses 13x faster.
+ * .tzst - slightly worse compression ratio to .pkg, decompresses 13x faster.
  *
  * NOTE: Decompression speed does effect bulk builds since each slot has
  *	 to install pre-reqs before building any particular package.  Set
- *	 the default to .txz to remain close to synth's default.
+ *	 the default to .pkg to remain close to synth's default.
  *
  * NOTE: As of version 1.17 of pkg, all package files use the .pkg suffix
  *	 regardless of the compression format.
  */
-#define USE_PKG_SUFX		".txz"
+#define USE_PKG_SUFX		".pkg"
 
 /*
  * Topology linkages
@@ -142,7 +142,7 @@ typedef struct pkg {
 	char *portdir;		/* origin name e.g. www/chromium[@flavor] */
 	char *logfile;		/* relative logfile path */
 	char *version;		/* PKGVERSION - e.g. 3.5.0_1		*/
-	char *pkgfile;		/* PKGFILE    - e.g. flav-blah-3.5.0_1.txz */
+	char *pkgfile;		/* PKGFILE    - e.g. flav-blah-3.5.0_1.pkg */
 	char *distfiles;	/* DISTFILES  - e.g. blah-68.0.source.tar.xz */
 	char *distsubdir;	/* DIST_SUBDIR- e.g. cabal		*/
 	char *ignore;		/* IGNORE (also covers BROKEN)		*/

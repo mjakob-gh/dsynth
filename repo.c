@@ -166,7 +166,7 @@ childRebuildRepo(bulk_t *bulk)
 	/*
 	 * Check package version.  Pkg version 1.12 and later generates
 	 * the proper repo compression format.  Prior to that version
-	 * the repo directive always generated .txz files.
+	 * the repo directive always generated .pkg files.
 	 */
 	cac = 0;
 	cav[cac++] = pkg_path;
@@ -186,9 +186,9 @@ childRebuildRepo(bulk_t *bulk)
 	dexec_close(fp, pid);
 
 	/*
-	 * Repackage the .txz files created by pkg repo if necessary
+	 * Repackage the .pkg files created by pkg repo if necessary
 	 */
-	if (repackage_mode == 0 && strcmp(UsePkgSufx, ".txz") != 0) {
+	if (repackage_mode == 0 && strcmp(UsePkgSufx, ".pkg") != 0) {
 		const char *comp;
 		const char *decomp;
 
@@ -213,12 +213,12 @@ childRebuildRepo(bulk_t *bulk)
 			comp = "cat";
 		}
 		repackage(PackagesPath, "digests",
-			  ".txz", UsePkgSufx,
+			  ".pkg", UsePkgSufx,
 			  decomp, comp);
 		repackage(PackagesPath, "packagesite",
-			  ".txz", UsePkgSufx,
+			  ".pkg", UsePkgSufx,
 			  decomp, comp);
-	} else if (repackage_mode == 1 && strcmp(UsePkgSufx, ".txz") != 0) {
+	} else if (repackage_mode == 1 && strcmp(UsePkgSufx, ".pkg") != 0) {
 		const char *comp;
 		const char *decomp;
 
@@ -243,7 +243,7 @@ childRebuildRepo(bulk_t *bulk)
 			comp = "cat";
 		}
 		repackage(PackagesPath, "meta",
-			  UsePkgSufx, ".txz",
+			  UsePkgSufx, ".pkg",
 			  decomp, comp);
 	}
 	free (pkg_path);

@@ -1856,7 +1856,7 @@ childInstallPkgDeps_recurse(FILE *fp, pkglink_t *list, int undoit,
 					tot += st.st_size;
 				else if (strcmp(ptr, ".tgz") == 0)
 					tot += st.st_size * 3;
-				else if (strcmp(ptr, ".txz") == 0)
+				else if (strcmp(ptr, ".pkg") == 0)
 					tot += st.st_size * 5;
 				else if (strcmp(ptr, ".tzst") == 0)
 					tot += st.st_size * 5;
@@ -1939,7 +1939,7 @@ childInstallPkgDeps_recurse(FILE *fp, pkglink_t *list, int undoit,
  *	stage
  *	test		(skipped)
  *	check-plist	('dsynth test blahblah' or 'dsynth -D everything' only)
- *	package		 e.g. /construction/lang/perl5.28/pkg/perl5-5.28.2.txz
+ *	package		 e.g. /construction/lang/perl5.28/pkg/perl5-5.28.2.pkg
  *	install		(skipped)
  *	deinstall	(skipped)
  */

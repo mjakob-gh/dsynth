@@ -451,11 +451,11 @@ parseConfigFile(const char *path)
 				UsePkgSufx = l2;
 				dassert(strcmp(l2, ".tgz") == 0 ||
 					strcmp(l2, ".tar") == 0 ||
-					strcmp(l2, ".txz") == 0 ||
+					strcmp(l2, ".pkg") == 0 ||
 					strcmp(l2, ".tzst") == 0 ||
 					strcmp(l2, ".tbz") == 0,
 					"Config: Unknown Package_suffix,"
-					"specify .tgz .tar .txz .tbz or .tzst");
+					"specify .tgz .tar .pkg .tbz or .tzst");
 			} else if (strcmp(l1, "Meta_version") == 0) {
 				MetaVersion = strtol(l2, NULL, 0);
 			} else if (strcmp(l1, "Number_of_builders") == 0) {

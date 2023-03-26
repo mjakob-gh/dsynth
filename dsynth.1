@@ -87,7 +87,7 @@ Directory_buildbase= /build/synth/build
 Directory_logs= /build/synth/logs
 Directory_ccache= disabled
 Directory_system= /
-Package_suffix= .txz
+Package_suffix= .pkg
 ; Meta_version= 2	(this is the default)
 ; Check_plist= false	(this is the default)
 ; Numa_setsize= 0	(this is the default. 0, 2, or 4)
@@ -568,7 +568,7 @@ All other r/w filesystems in the workers are
 .Xr tmpfs 5
 based filesystems and will be created and torn-down for each port.
 .Pp
-.It Pa .txz
+.It Pa .pkg
 .It Pa .tgz
 .It Pa .tar
 .It Pa .tbz
@@ -576,11 +576,11 @@ based filesystems and will be created and torn-down for each port.
 The recommended setting for
 .Va Package_suffix
 is either
-.Pa .txz
+.Pa .pkg
 or
 .Pa .tgz .
 Use
-.Pa .txz
+.Pa .pkg
 for better compression at the cost of somewhat slower bulk builds due
 to the time overhead for compression and decompression, or
 use
