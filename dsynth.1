@@ -80,7 +80,7 @@ profile_selected= LiveSystem
 Operating_system= DragonFly
 Directory_packages= /build/synth/live_packages
 Directory_repository= /build/synth/live_packages/All
-Directory_portsdir= /build/synth/dports
+Directory_portsdir= /build/synth/ports
 Directory_options= /build/synth/options
 Directory_distfiles= /build/synth/distfiles
 Directory_buildbase= /build/synth/build
@@ -105,8 +105,8 @@ and /usr/dports onto /build/synth/dports with
 entries as follows:
 .Bd -literal
 # Device              Mountpoint		FStype  Options DumpPass#
-/usr/distfiles        /build/synth/distfiles	null    rw      4 4
-/usr/dports           /build/synth/dports	null    rw      4 4
+/usr/ports/distfiles  /build/synth/distfiles	null    rw      4 4
+/usr/ports            /build/synth/ports	null    rw      4 4
 .Ed
 .Pp
 Please set the number of builders and the maximum number of jobs per
