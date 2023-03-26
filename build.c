@@ -2057,6 +2057,9 @@ WorkerProcess(int ac, char **av)
 #ifdef __DragonFly__
 	addbuildenv("DFLYVERSION", VersionFromParamHeader, BENV_MAKECONF);
 	addbuildenv("OSVERSION", "9999999", BENV_MAKECONF);
+#elif defined(__FreeBSD__)
+        addbuildenv("FBSDVERSION", VersionFromParamHeader, BENV_MAKECONF);
+        addbuildenv("OSVERSION", "9999999", BENV_MAKECONF);
 #else
 #error "Need OS-specific data to generate make.conf"
 #endif
