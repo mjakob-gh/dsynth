@@ -208,7 +208,7 @@ DoBuild(pkg_t *pkgs)
 	}
 
 	/*
-	 * Remove binary package files for dports whos directory
+	 * Remove binary package files for ports whos directory
 	 * has changed.
 	 */
 	asprintf(&dbmpath, "%s/ports_crc", BuildBase);
@@ -2786,7 +2786,7 @@ dophase(worker_t *work, wmsg_t *wmsg, int wdog, int phaseid, const char *phase)
 
 	/*
 	 * Kill any processes still running (sometimes processes end up in
-	 * the background during a dports build), and clean up any other
+	 * the background during a ports build), and clean up any other
 	 * children that we have inherited.
 	 */
 	phaseReapAll();

@@ -37,7 +37,7 @@
 .Os
 .Sh NAME
 .Nm dsynth
-.Nd dsynth bulk dports builder utility
+.Nd dsynth bulk ports builder utility
 .Sh SYNOPSIS
 .Nm
 .Op Fl dhvxyDNPS
@@ -52,7 +52,7 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility allows a user to build and maintain part or all of dports
+utility allows a user to build and maintain part or all of ports
 locally.
 .Nm
 figures out the dependency topology of the dport(s) for you and
@@ -142,7 +142,7 @@ or twice as much swap as main memory, whichever is the higher value.
 We recommend a minimum of 500GB of storage be configured in
 .Pa /build
 or wherever you have configured various directories.
-A full set of distfiles requires at least 120GB, a full dports including
+A full set of distfiles requires at least 120GB, a full ports including
 the git repo requires at least 1.5GB, and a full set of built packages
 requires at least 75GB.
 If using a filesystem such as HAMMER or HAMMER2
@@ -253,7 +253,7 @@ This list should be space-delimited in DIR/SUBDIR format, for example:
 For directives with an optional ports list, your current installed set
 of ports will be used if you do not specify a list.  You may also
 specify a filename instead of a port to have dsynth read the ports list
-from a text file.  Ports are specified by dports directory and subdirectory.
+from a text file.  Ports are specified by ports directory and subdirectory.
 For example "www/chromium".
 .Bl -tag -width indent
 .It Cm init
@@ -283,7 +283,7 @@ NOT CURRENTLY IMPLEMENTED
 Fetch all source distributions required to build
 the specified target.  Specifying 'everything' fetches
 all source distributions required to build the whole
-of dports.
+of ports.
 .Pp
 Any existing distfiles which do not match the expected
 signature will be re-fetched.
@@ -304,13 +304,13 @@ Build or rebuild the database files for the configured repository.
 Delete any obsolete source distribution files.
 .It Cm reset-db
 Delete ports_crc.db from the build directory.
-This database is used to detect changes made to the dports tree.
+This database is used to detect changes made to the ports tree.
 It will be regenerated on your next build without forcing any packages to be rebuilt.
 .It Cm status-everything
 This will do a dry-run of a full bulk build of everything,
 but not actually build anything.
 .It Cm everything
-This will build the entire dports tree and then rebuild the repository
+This will build the entire ports tree and then rebuild the repository
 when it finishes.
 .It Cm version
 This is for synth compatibility.
@@ -343,10 +343,10 @@ ports that might have been added while it was running.  This directive
 also has numerous exit/exec lock-file races and is intended to only be used
 manually by the user.
 .It Cm build Op Ar ports
-Incrementally build dports based on the given list.
+Incrementally build ports based on the given list.
 When done, ask whether the repository should be rebuilt or not.
 .It Cm just-build Op Ar ports
-Incrementally build dports based on the given list, then
+Incrementally build ports based on the given list, then
 exits.
 No post-build steps will be taken.
 .It Cm install Op Ar ports
@@ -376,7 +376,7 @@ The
 configuration variable in
 .Pa /etc/dsynth/dsynth.ini
 points to the configured options directory tree.
-In the base system dports this would be
+In the base system ports this would be
 .Pa /var/db/ports ,
 but you can supply an independent set of ports options for your dsynth
 build if you like.
@@ -518,13 +518,13 @@ ports to a directory into which
 .Nm
 will download any source distribution files required for building.
 .Pp
-.It Pa /build/synth/dports
+.It Pa /build/synth/ports
 Recommended setting for
 .Va Directory_portsdir ,
-points to a checked out dports repo.
+points to a checked out ports repo.
 Note that
 .Nm
-does not automatically 'git pull' or otherwise synchronize the dports repo,
+does not automatically 'git pull' or otherwise synchronize the ports repo,
 you must do that yourself prior to starting a build.
 .Pp
 .It Pa /build/synth/live_packages
@@ -595,7 +595,7 @@ decompression time matters.
 .Ex -std
 .Sh SEE ALSO
 .Xr synth 1 ,
-.Xr dports 7
+.Xr ports 7
 .Sh HISTORY
 The
 .Nm

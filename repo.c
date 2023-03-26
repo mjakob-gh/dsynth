@@ -572,7 +572,7 @@ rebuildTerminateSignal(int signo __unused)
  * are in parentdir/.locks and not parentdir/subdir/.locks.  The invocation
  * of do-fetch can be a bit messy so we look for a .locks subdir everywhere.
  *
- * The /usr/dports/Mk/Scripts/do-fetch.sh script uses 'echo blah | md5',
+ * The /usr/ports/Mk/Scripts/do-fetch.sh script uses 'echo blah | md5',
  * so we have to add a newline to the buffer being md5'd.
  *
  * The pass-in rpath is relative to the distfiles base.

@@ -520,13 +520,13 @@ processPackageListBulk(int total)
 			if (stop_fail == stop_base_list) {
 				printf(
   "prepare-system: Some of your installed packages no longer exist in\n"
-  "dports, do you wish to continue rebuilding what does exist?\n");
+  "ports, do you wish to continue rebuilding what does exist?\n");
 			        if (askyn("Continue anyway? "))
 					remove_corrupt = 1;
 			} else {
 				printf(
   "prepare-system: Some of your installed packages have dependencies\n"
-  "which could not be found in dports, cannot continue, aborting\n");
+  "which could not be found in ports, cannot continue, aborting\n");
 			}
 		} else {
 			printf("unable to continue, aborting\n");
@@ -890,7 +890,7 @@ resolveDepString(pkg_t *pkg, char *depstr, int gentopo, int dep_type)
 		}
 
 		/*
-		 * Separate out the two dports directory components and
+		 * Separate out the two ports directory components and
 		 * extract the optional '@flavor' specification.
 		 */
 		sep = strchr(dep, '/');
@@ -951,7 +951,7 @@ FreePackageList(pkg_t *pkgs __unused)
 }
 
 /*
- * Scan some or all dports to allocate the related pkg structure.  Dependencies
+ * Scan some or all ports to allocate the related pkg structure.  Dependencies
  * are stored but not processed.
  *
  * Threaded function
@@ -1307,7 +1307,7 @@ scan_and_queue_dir(const char *path, const char *level1, int level)
 	int count = 0;
 
 	dir = opendir(path);
-	dassert(dir, "Cannot open dports path \"%s\"", path);
+	dassert(dir, "Cannot open ports path \"%s\"", path);
 
 	while ((den = readdir(dir)) != NULL) {
 		if (den->d_namlen == 1 && den->d_name[0] == '.')
