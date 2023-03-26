@@ -1,6 +1,5 @@
 #
 #
-
 PROG=	dsynth
 SRCS=	dsynth.c subs.c pkglist.c config.c bulk.c build.c repo.c mount.c
 SRCS+=	status.c numa.c
@@ -21,7 +20,7 @@ CFLAGS+=	-DSCRIPTDIR=${SHAREDIR}/dsynth
 LDADD+=		-lpthread -lutil
 DPADD+=		${LIBPTHREAD} ${LIBUTIL}
 
-# ncurses, md5, for FreeBSD
+# ncurses, md5, crypto for FreeBSD
 #
 LDADD+=		-lncursesw
 LDADD+=		-lcrypto
